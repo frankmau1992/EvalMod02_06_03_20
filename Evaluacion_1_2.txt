@@ -1,0 +1,39 @@
+Dadas las siguientes tablas:
+
+empleado (idEmpleado, nombreEmpleado,  fechaIngreso)
+servicio (idServicio, nombreServicio, valorServicio)
+vehiculo (idVehiculo, marcaVehiculo, modeloVehiculo)
+prestación_servicio (idPrestacionServicio, IdServicio, idEmpleado, idVehiculo, fecha)
+
+a.-Mostrar la cantidad de prestaciones de servicios ejecutados entre el 01 de octubrey el 26 de noviembre del 2018.
+
+SELECT idPrestacionServicio FROM prestación_servicio BETWEEN '01-10-2018' and '26-11-2018'
+
+b.-Mostrar la cantidad total de prestaciones realizadas agrupadas por idVehiculo.
+
+SELECT idPrestacionServicio, idVehiculo FROM prestación_servicio ORDER BY idVehiculo 
+
+c.-Mostrar los vehículos con la menor cantidad de prestaciones de servicios realizados.
+
+c) SELECT  min(idVehiculo) FROM prestacion_servicio;
+
+2.-Crear con DDL unatabla empleado que contenga lo siguiente:
+
+IdEmpleado
+nombre
+apellido
+dirección
+teléfonoid
+Departamento.
+
+CREATE TABLE empleado
+(
+   IdEmpleado       int                            not null,
+   nombre           varchar(30)                    not null,
+   apellido         varchar(20)                    not null,
+   direccion        varchar(50)                    not null,
+   teléfonoid       int                            not null,
+   Departamento     int                            not null,
+primary key (IdEmpleado)
+
+);
